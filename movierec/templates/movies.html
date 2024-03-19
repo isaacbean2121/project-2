@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie List</title>
+</head>
+<body>
+    <h1>Enter a Movie Title for Recommendations</h1>
+    <form action="/" method="post">
+        <label for="movie_title">Movie Title:</label>
+        <input type="text" id="movie_title" name="movie_title">
+        <input type="submit" value="Get Recommendations">
+    </form>
+
+    <ul>
+        {% for key, movie in movies.items() %}
+        <li>
+            <h3>{{ movie.title }}</h3>
+            <p>{{ movie.description }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
